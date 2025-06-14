@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Céu e Chão VR</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <!-- Luzes -->
+      <a-entity light="type: ambient; color: #ffffff; intensity: 1"></a-entity>
+      <a-entity light="type: directional; color: #ffffff; intensity: 0.6" position="0 10 0"></a-entity>
+
+      <!-- Céu -->
+      <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" rotation="0 -90 0"></a-sky>
+
+      <!-- Chão -->
+       <a-plane src ="MEDIA/10500149.jpg" repeat="10 10" height = "1000" width = "1000" rotation = "-90 0 0" ></a-plane>
+
+      <!-- Casa (Caixa + Telhado) -->
+      <a-box position="0 1 -5" depth="7" height="4" width="6" color="#B22222"></a-box>
+      <a-cone position="0 4.5 -5" radius-bottom="4" height="2" color="#8B0000"></a-cone>
+
+      <!-- Árvores -->
+      <a-cylinder position="-5 1 -3" radius="0.3" height="2" color="#8B4513"></a-cylinder>
+      <a-sphere position="-5 2.5 -3" radius="1" color="#228B22"></a-sphere>
+
+      <a-cylinder position="5 1 -8" radius="0.3" height="2" color="#8B4513"></a-cylinder>
+      <a-sphere position="5 2.5 -8" radius="1" color="#228B22"></a-sphere>
+
+      <a-cylinder position="0 1 5" radius="0.3" height="2" color="#8B4513"></a-cylinder>
+      <a-sphere position="0 2.5 5" radius="1" color="#228B22"></a-sphere>
+
+      <!-- Personagem (Boneco simples) -->
+      <a-cylinder position="2 1 -2" radius="0.3" height="1.5" color="#FFD700"></a-cylinder>
+      <a-sphere position="2 2.4 -2" radius="0.4" color="#FFE4B5"></a-sphere>
+      <a-cylinder position="2.2 1 -2.2" radius="0.1" height="1" color="#FFD700" rotation="0 0 30"></a-cylinder>
+      <a-cylinder position="1.8 1 -2.2" radius="0.1" height="1" color="#FFD700" rotation="0 0 -30"></a-cylinder>
+      <a-cylinder position="2.1 0.5 -2" radius="0.1" height="1" color="#FFD700"></a-cylinder>
+      <a-cylinder position="1.9 0.5 -2" radius="0.1" height="1" color="#FFD700"></a-cylinder>
+
+      <!-- Objeto Animado (Esfera girando) -->
+      <a-sphere position="0 3 0" radius="0.5" color="#00CED1"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+      </a-sphere>
+
+      <!-- Música de fundo -->
+      <a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true" loop="true" volume="0.3"></a-sound>
+
+      <!-- Texto no ambiente -->
+      <a-text value="Bem-vindo ao Mundo VR!" color="#FFFFFF" width="6" position="-2 4 -5"></a-text>
+
+      <!-- Câmera com Mouse + WASD -->
+      <a-camera id="camera" position="0 5 0" look-controls="pointerLockEnabled: true">
+        <a-cursor color="white"></a-cursor>
+      </a-camera> ""
+
+    </a-scene>
+  </body>
+</html>
